@@ -1,3 +1,5 @@
+### copied from sketchbook.py
+
 from krita import Krita, InfoObject
 import os
 import logging
@@ -71,6 +73,11 @@ def open_next_page(sketchbook_path: str, current_page_filename = "last", templat
     else:
         _create_new_page(w, h, sketchbook_path, current_page_filename)
     log.info("Sketchbook page was saved")
-        
 
-open_next_page("/home/saysaeqo/Dropbox/HomePictures/sketchbook/")
+### end of copied from sketchbook.py
+
+
+open_next_page("/home/saysaeqo/Dropbox/HomePictures/manga/", 
+                          current_page_filename="manga_last",
+                          template_path="/home/saysaeqo/Dropbox/HomePictures/komiks_s.kra",
+                          exported_page_prefix="manga_")
