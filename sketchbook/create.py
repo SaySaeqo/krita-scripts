@@ -2,30 +2,12 @@ import krita
 import os
 import PyQt5.QtWidgets as QtWidgets
 import shutil
+from . import next_page
 
-SKETCHBOOK_DOCUMENT_NAME = "Kartka szkicownika"
 A4_WIDTH = 2480
 A4_HEIGHT = 3508
 
-def _create_new_page(width, height, current_page_path):
-    app = krita.Krita.instance()
-    doc = app.createDocument(width, height, SKETCHBOOK_DOCUMENT_NAME, "RGBA", "U8", "", 300.0)
-    app.activeWindow().addView(doc)
-    app.setActiveDocument(doc)
-    # add empty layer
-    app.action('add_new_paint_layer').trigger()
-    # save new page
-    doc.saveAs(current_page_path)
-
-def _create_new_page_from_template(template_path: str, current_page_path):
-    app = krita.Krita.instance()
-    doc = app.openDocument(template_path)
-    app.activeWindow().addView(doc)
-    app.setActiveDocument(doc)
-    # save new page
-    doc.saveAs(current_page_path)
-
-def open_sketchbook(sketchbook_path: str, template_path: str, page_prefix: str):
+def _create_sketchbook(sketchbook_path: str, template_path: str, page_prefix: str):
     app = krita.Krita.instance()
 
     # create sketchbook directory
@@ -40,11 +22,11 @@ def open_sketchbook(sketchbook_path: str, template_path: str, page_prefix: str):
     # create last.kra file
     last_path = sketchbook_path + page_prefix + "last.kra"
     if os.path.exists(template_path):
-        _create_new_page_from_template(template_path, last_path)
+        next_page._create_new_page_from_template(template_path, last_path)
     else:
-        _create_new_page(A4_WIDTH, A4_HEIGHT, last_path)
+        next_page._create_new_page(A4_WIDTH, A4_HEIGHT, last_path)
 
-def path_input_layout(search_dir = False):
+def _path_input_layout(search_dir = False):
     layout = QtWidgets.QHBoxLayout()
     path_input = QtWidgets.QLineEdit()
     path_button = QtWidgets.QPushButton("Browse")
@@ -56,7 +38,7 @@ def path_input_layout(search_dir = False):
         path_button.clicked.connect(lambda: path_input.setText(QtWidgets.QFileDialog.getOpenFileName()[0]))
     return layout, path_input
 
-def open_widget():
+def show_dialog():
     # opens new window with 2 file inputs, 1 text input and 2 buttons
     main_window: QtWidgets.QMainWindow = krita.Krita.instance().activeWindow().qwindow()
 
@@ -69,9 +51,9 @@ def open_widget():
     form = QtWidgets.QFormLayout()
     layout.addLayout(form)
 
-    l1, sketchbook_path_input = path_input_layout(search_dir=True)
+    l1, sketchbook_path_input = _path_input_layout(search_dir=True)
     form.addRow("Sketchbook path", l1)
-    l2, template_path_input = path_input_layout()
+    l2, template_path_input = _path_input_layout()
     form.addRow("Template (krita file)", l2)
     page_prefix_input = QtWidgets.QLineEdit()
     form.addRow("Page prefix", page_prefix_input)
@@ -108,10 +90,8 @@ def open_widget():
     open_sketchbook_button.clicked.connect(check_inputs)
     buttons_layout.addWidget(open_sketchbook_button)
 
-    dialog.accepted.connect(lambda: open_sketchbook(sketchbook_path_input.text(), template_path_input.text(), page_prefix_input.text()))
+    dialog.accepted.connect(lambda: _create_sketchbook(sketchbook_path_input.text(), template_path_input.text(), page_prefix_input.text()))
     dialog.show()
-
-open_widget()
 
     
 

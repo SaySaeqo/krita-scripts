@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActionCollection version="2" name="Scripts">
+    <Actions category="Scripts">
+        <text>Sketchbook</text>
+
+        <Action name="sketchbook_next_page">
+            <icon></icon>
+            <text>Next page</text>
+            <whatsThis></whatsThis>
+            <toolTip></toolTip>
+            <iconText></iconText>
+            <activationFlags>00001</activationFlags>
+            <activationConditions>0</activationConditions>
+            <shortcut>ctrl+shift+q</shortcut>
+            <isCheckable>false</isCheckable>
+            <statusTip></statusTip>
+        </Action>
+        <Action name="sketchbook_create">
+            <icon></icon>
+            <text>Open new</text>
+            <whatsThis></whatsThis>
+            <toolTip></toolTip>
+            <iconText></iconText>
+            <activationFlags>00000</activationFlags>
+            <activationConditions>0</activationConditions>
+            <shortcut></shortcut>
+            <isCheckable>false</isCheckable>
+            <statusTip></statusTip>
+        </Action>
+    </Actions>
+</ActionCollection>

@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Service
+ServiceTypes=Krita/PythonPlugin
+X-KDE-Library=sketchbook
+X-Python-2-Compatible=false
+Name=Sketchbook
+Comment=Organize your exports like physical sketchbooks

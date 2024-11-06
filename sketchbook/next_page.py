@@ -5,7 +5,7 @@ import logging
 SKETCHBOOK_DOCUMENT_NAME = "Kartka szkicownika"
 LOGGER_NAME = "sketchbook-script"
 
-def _export_page(sketchbook_path, page_prefix = "") -> (int, int):
+def _export_page(sketchbook_path, page_prefix = "") -> tuple[int, int]:
     doc = krita.Krita.instance().activeDocument()
     info = krita.InfoObject()
     info.setProperty("alpha", False)
@@ -72,6 +72,3 @@ def open_next_page():
     else:
         _create_new_page(w, h, last_path)
     log.info("Sketchbook page was saved")
-
-
-open_next_page()
