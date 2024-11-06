@@ -1,4 +1,8 @@
 # Sketchbook plugin
+
+## Screenshots
+![toolbar](./sketchbook/screenshots/toolbar.png) ![create sketchbook dialog](./sketchbook/screenshots/create_sketchbook_dialog.png)
+
 ## Installation
 - Add `sketchbook` folder, `actions` folder and `sketchbook.desktop` file to your `pykrita` folder (optionally add `sketchbook.action` file to your `actions` folder).
 - Then open krita and enable this plugin by going to `Settings > Configure Krita... > Python Plugin Manager`.  
