@@ -27,5 +27,17 @@
             <isCheckable>false</isCheckable>
             <statusTip></statusTip>
         </Action>
+        <Action name="sketchbook_folder">
+            <icon></icon>
+            <text>Open containing folder</text>
+            <whatsThis></whatsThis>
+            <toolTip></toolTip>
+            <iconText></iconText>
+            <activationFlags>00001</activationFlags>
+            <activationConditions>0</activationConditions>
+            <shortcut></shortcut>
+            <isCheckable>false</isCheckable>
+            <statusTip></statusTip>
+        </Action>
     </Actions>
 </ActionCollection>
