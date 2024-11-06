@@ -3,5 +3,6 @@ Type=Service
 ServiceTypes=Krita/PythonPlugin
 X-KDE-Library=sketchbook
 X-Python-2-Compatible=false
+X-Krita-Manual=manual.html
 Name=Sketchbook
 Comment=Organize your exports like physical sketchbooks
