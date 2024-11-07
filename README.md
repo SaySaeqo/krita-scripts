@@ -11,7 +11,7 @@
 
 ## Usage
 You can use sketchbook plugin by going to `Tools > Sketchbook` or by defining shortcuts.  
-For more details refer to [manual](./sketchbook/manual.html).
+For more details refer to [manual](https://saysaeqo.github.io/krita-scripts/sketchbook/manual.html).
 
 # Other scripts
 Other scripts can be used with `Ten Scripts` builtin plugin. Enjoy!
