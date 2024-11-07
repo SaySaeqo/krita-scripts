@@ -52,11 +52,19 @@ def show_dialog():
     layout.addLayout(form)
 
     l1, sketchbook_path_input = _path_input_layout(search_dir=True)
-    form.addRow("Sketchbook path", l1)
+    label1 = QtWidgets.QLabel("Sketchbook path")
+    label1.setToolTip("Path where the sketchbook folder will be created")
+    form.addRow(label1, l1)
+
     l2, template_path_input = _path_input_layout()
-    form.addRow("Template (krita file)", l2)
+    label2 = QtWidgets.QLabel("Template (krita file)")
+    label2.setToolTip("Optional template file to use for new page creation")
+    form.addRow(label2, l2)
+
     page_prefix_input = QtWidgets.QLineEdit()
-    form.addRow("Page prefix", page_prefix_input)
+    label3 = QtWidgets.QLabel("Page prefix")
+    label3.setToolTip("Optional prefix for all sketchbook related files (adds _ to the end if not present)")
+    form.addRow(label3, page_prefix_input)
 
     # buttons
     buttons_layout = QtWidgets.QHBoxLayout()
