@@ -15,3 +15,7 @@ For more details refer to [manual](https://saysaeqo.github.io/krita-scripts/sket
 
 # Other scripts
 Other scripts can be used with `Ten Scripts` builtin plugin. Enjoy!
+
+# Changelog
+
+- Added exporting as page (without need for creating new empty document after saving current page)

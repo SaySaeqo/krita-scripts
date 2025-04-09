@@ -15,6 +15,18 @@
             <isCheckable>false</isCheckable>
             <statusTip></statusTip>
         </Action>
+        <Action name="sketchbook_export_as_page">
+            <icon></icon>
+            <text>Export as page</text>
+            <whatsThis></whatsThis>
+            <toolTip></toolTip>
+            <iconText></iconText>
+            <activationFlags>00001</activationFlags>
+            <activationConditions>0</activationConditions>
+            <shortcut></shortcut>
+            <isCheckable>false</isCheckable>
+            <statusTip></statusTip>
+        </Action>
         <Action name="sketchbook_create">
             <icon></icon>
             <text>Open new</text>

@@ -72,3 +72,26 @@ def open_next_page():
     else:
         _create_new_page(w, h, last_path)
     log.info("Sketchbook page was saved")
+
+def export_as_page():
+    log = logging.getLogger(LOGGER_NAME)
+    doc = krita.Krita.instance().activeDocument()
+    if not doc:
+        log.warning("Skechbook page was not saved - no active document")
+        return
+    
+    last_path = doc.fileName()
+    if not last_path or not last_path.endswith("last.kra"):
+        log.warning("Skechbook page was not saved - that is not a sketchbook page")
+        return
+    
+    sketchbook_path = os.path.dirname(last_path) + "/"
+    sketchbook_prefix = os.path.basename(last_path).removesuffix("last.kra")
+
+    filepath = _export_page(sketchbook_path, sketchbook_prefix)
+    if not os.path.exists(filepath):
+        log.warning("Skechbook page was not saved - declined by user")
+        return
+    
+    doc.save()
+    log.info("Sketchbook page was saved")

@@ -31,6 +31,9 @@ class SketchbookExtension(krita.Extension):
         sketchbook_next_page = window.createAction("sketchbook_next_page", None, "tools/sketchbook")
         sketchbook_next_page.triggered.connect(next_page.open_next_page)
 
+        sketchbook_next_page = window.createAction("sketchbook_export_as_page", None, "tools/sketchbook")
+        sketchbook_next_page.triggered.connect(next_page.export_as_page)
+
         sketchbook_create = window.createAction("sketchbook_create", None, "tools/sketchbook")
         sketchbook_create.triggered.connect(create.show_dialog)
 
