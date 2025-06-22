@@ -18,4 +18,4 @@ Other scripts can be used with `Ten Scripts` builtin plugin. Enjoy!
 
 # Changelog
 
-- Added exporting as page (without need for creating new empty document after saving current page)
+- Added exporting as page (without need to create new empty document after saving current page)
