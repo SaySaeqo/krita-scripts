@@ -1,6 +1,4 @@
 # Sketchbook plugin
-
-## About
 Simple krita plugin for automated exporting as autonumerated PNG files. Read more on its [official page](https://krita-artists.org/t/sketchbook-like-exports-organizer-extension/106387).
 
 ## Screenshots
