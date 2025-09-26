@@ -22,5 +22,5 @@ Other scripts can be used with `Ten Scripts` builtin plugin. Enjoy!
 
 # Changelog
 
-- Added exporting as page (without need to create new empty document after saving current page)
+- Added: exporting as page (allows to keep current document after saving it as a next page)
 - Fixed: missing text on the tools dropdown
